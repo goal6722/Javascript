@@ -21,6 +21,26 @@
     <h1 class="span"></h1>
     <h1 class="span"></h1>
     <script>
+
+      function selectColor(tag)
+      {
+        let num = Number(tag.textContent)
+        if(num>= 1&& num<=10)
+        tag.style.background = 'yellow'
+        else if(num>=11 && num<=20)
+        tag.style.background ='blue'
+        else if(num>=21 && num<=30)
+        tag.style.background ='red'
+        else if(num>=31 && num <=40)
+        {
+          tag.style.background = 'black'
+          tag.style.color='white'
+        }
+        else
+        tag.style.background = 'green'
+      }
+      
+
         document.querySelector('button').onclick = 
         function() {
 
@@ -72,6 +92,7 @@
         for(let i = 0; i<lottoarr.length; i++)
         {
             spanArr[i].textContent = ` ${lottoarr[i]} `
+            selectColor(spanArr[i])
         }
         spanArr[spanArr.length-1].textContent = 
         '보너스 번호 : '+bns
