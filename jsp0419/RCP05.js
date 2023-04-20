@@ -1,1 +1,0 @@
-let gbb=['https://cdn.imweb.me/thumbnail/20200514/7fc8b1411fa8d.png', 'https://img.seoul.co.kr/img/upload/2020/04/01/SSI_20200401150529_O2.png', 'https://newsimg.hankookilbo.com/cms/articlerelease/2021/04/09/570facc1-cf90-4be6-8661-fd9047a9cf4d.jpg']
