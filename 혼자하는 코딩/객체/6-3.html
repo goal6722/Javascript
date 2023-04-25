@@ -1,0 +1,61 @@
+<script>
+//   const dog = {
+//     name : '구름',
+//     age : '7',
+//     color : '갈색',
+//     status : '감기몸살'
+//   }
+//   // // 과거 1
+//   // dog.status = dog.status !== undefined ? dog.status : '이상 없음'
+//   // //과거 2
+//   // dog.status = dog.status ? dog.status : '이상없음'
+//   // //과거 3
+//   // dog.status = dog.status || '이상없음.'
+
+// const newDog = {
+  
+//   status : '이상 없음',
+//   ...dog // ...dog의 위치가 중요하다. ...dog 아래에 있는 것들 을 넣기 때문에 이렇게 있으면 원하는 대로 안들어간다
+// }
+// console.log(newDog)
+
+// const test = function(object){
+//   object = {status : '이상없음', ...object}
+//   return `${object.name} : ${object.age} : ${object.color} : ${object.status}`  
+// }
+// console.log(test({
+//   name:'구름',
+//   age : '7',
+//   color : '갈색'
+// }))
+
+const test = function(object){
+  const {naem, age, color, status} = {status : '이상없음', ...object}
+  return `${name} : ${age} : ${color} : ${status}`  
+}
+console.log(test({
+  name:'구름',
+  age : '7',
+  color : '갈색'
+}))
+
+
+// const test = function ({
+//   name,
+//   age,
+//   color,
+//   status = '이상 없음'
+// })
+// {
+//   return `${name} : ${age} : ${color} : ${status}` 
+// } 
+// console.log(test({
+//   name: '이수성',
+//   age: 26,
+//   color: 'yellow',
+  
+// }))
+
+
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> 로또 번호는 ?</h1>
+  
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<script>
+  let lottery = []
+  let bns = Math.floor(Math.random()*45) + 1
+  let lucky = document.getElementsByTagName('span')
+
+  for (let i = 0; i < 6; i++) {
+    lottery[i] =  Math.floor(Math.random()*45) + 1
+    for (let j = 0; j < j; j++) {
+     if(lottery[i] == lottery[j]){
+     i--
+     }
+    }   
+  }
+console.log(lottery)
+
+
+
+</script>
+</body>
+</html>
