@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//     function callThreeTimes(callback){
+//         for (let i = 0; i < 3; i++) {
+//         callback(i)
+//         }
+
+//     }
+   
+//     callThreeTimes(function (i) {
+//       console.log(`${i}번째 함수 호출`)
+//     })
+
+//     const numbers = [273,52,103,32,57]
+
+// numbers.forEach(function(value, index,array) {
+//   console.log(`${index}번째 요소 : ${value}, ${array}`)
+// })
+// const numbers = [1,2,3,4,5,6]
+
+// const EvenNumber = numbers.map(function (value) {
+//   return value + '!!'
+// })
+// console.log(`numbers 배열에서 짝수는 ${EvenNumber} 입니다`)
+
+// 화살표 함수 사용해보기
+// const ArrowNumber = numbers.map((value, array) => value + '!!')
+// console.log(`numbers 배열에서 짝수는 ${ArrowNumber} 입니다`)
+
+//const ArrrowNumbers = numbers.map((value, array) => value + '!!')
+//console.log(`ArrowNumber 화살표 함수 이용해 보기 ${ArrrowNumbers}`)
+
+// const myForEach = function (배열, 콜백함수) {
+//   for (let i = 0; i < 배열.length; i++) {
+//     const element = 배열[i];
+//     콜백함수(i, element, 배열)
+//   }
+// }
+// myForEach(배열, function(i,element,배열){
+//   console.log(`인덱스 ${i}, 값 : ${element}`)
+// })
+// let 배열 = [1,2,3,4,5,6,7]
+
+// const MyForEach = function(배열, 콜백함수){
+//   for (let i = 0; i < 배열.length; i++) {
+//      const element = 배열[i]    
+//       콜백함수(i, element, 배열)
+//     }
+//   }
+//   myForEach(배열, function(i,element,배열){
+//     console.log(`${i} 번째 배열 : ${element}`)
+//   })
+
+let numbers = [273, 52, 103, 32, 57]
+
+numbers = numbers.map(function(value){
+  return value*value
+})
+
+numbers.forEach(console.log)
+  </script>
+  
+</body>
+</html>

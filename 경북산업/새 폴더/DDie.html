@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> 내가 태어난 계절</h1>
+  <h1 id="season"></h1>
+  <img src="" alt="">
+  
+  <script>
+    let born = prompt('당신이 태어난 월은?')
+         born = Number(born)
+   let seasonimg=document.querySelector('img')
+    let season = document.querySelector('#season')
+    let error = prompt('당신이 태어난 월은?')
+
+    if (born==1 || born==12 || born==2) {
+      seasonimg.src="https://dimg.donga.com/wps/NEWS/IMAGE/2022/12/21/117095100.2.jpg"
+      season.textContent='겨울'
+    }
+    else if(born==3 || born==4 || born==5){
+      seasonimg.src="https://img.sbs.co.kr/newimg/news/20200210/201401289_1280.jpg"
+      season.textContent='봄'
+    }
+    else if(born==6 || born==7 || born==8){
+      seasonimg.src="https://post-phinf.pstatic.net/MjAxODA2MThfMTE0/MDAxNTI5Mjk4NDY1ODQw.ujjd6OyrKD6aa55lOjDHVQnnjdty3-TOUPjOky_vuC0g.pUeQFIuKuUWAF59xXVRTWnTMoKslPWZ1ibNdKCmvVUog.JPEG/Korea_Summer-Travel_01.jpg?type=w1200"
+      season.textContent='여름'   
+    }
+    else if(born==9 || born==10 || born==11){
+      seasonimg.src="https://cdn.kscoramdeo.com/news/photo/202111/21276_37952_4215.jpg"
+      season.textContent='가을'   
+    }
+    else{
+       alert('1월 부터 12월 까지')
+       prompt("당신이 태어난 계절은?")
+
+    }
+   
+  </script>
+</body>
+</html>

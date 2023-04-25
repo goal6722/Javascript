@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="student_name"> 학생 이름 :</label>
+    <input type="text" id="student_name">
+    <label for="student_age"> 학생 나이 :</label>
+    <input type="text" id="student_age">
+    <label for="student_score"> 학생 성적 :</label>
+    <input type="text" id="student_score">
+    <button id="add_student">학생추가</button>
+    <button id="show_one_student"> 학생 아무나 출력 </button>
+
+    <h1 id="view_student"></h1>
+
+
+    <script>
+        function Student(name, age, score) {
+            this.name = name
+            this.age = age
+            this.score = score
+            this.study = function () {
+                console.log(`${name}학생의 나이는 ${age}살, 점수:${score}`)
+                console.log(`${name}학생이 열심히 공부합니다.`)
+            }
+            this.toString = function () {
+                return '이름+나이,점수:' + this.name + '_' + this.age + '_' + this.score
+            }
+        }
+        let students = []
+        students[0] = new Student('이진곤', 24, 90)
+        students[1] = new Student('이동준', 35, 10)
+        students.push(new Student('박준호', 34, 900))
+        students[3] = new Student('이하하', 55, 40)
+        let output = ''
+
+        for (let item of students) {
+            item.study()
+        }
+        let btn = document.querySelector('#add_student')
+        btn.onclick = function () {
+            let name = document.querySelector('#student_name')
+            let age = document.querySelector('#student_age')
+            let score = document.querySelector('#student_score')
+            students.push(new Student(name.value, age.value, score.value))
+            for (let item of students) {
+                console.log(item.toString())
+                output += item.toString() + '<br>'
+
+            }
+            document.querySelector('#view_studnet').innerHTML = output
+        }
+        document.querySelector('#show_one_student').onclick =
+            function () {
+                let idx = Math.floor(Math.random() * students.length)
+                document.querySelector('#view_student').textContent
+                    = students[idx].toString()
+                console.log(students[idx].toString())
+                alert(students[idx].toString)
+            }
+
+
+    </script>
+</body>
+
+</html>

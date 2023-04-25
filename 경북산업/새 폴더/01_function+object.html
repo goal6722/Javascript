@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    function Student(name, age, score){
+        this.name= name
+        this.age = age
+        this.score=score
+        this.study = function(){
+          console.log(`${name} 학생의 나이는 ${age}살이고 ${score}점을 받았습니다.`)
+          console.log(`${name} 학생이 열심히 공부합니다`)
+        }
+    }
+    let students=[]
+    students[0] = new Student('이진곤', 24, 90)
+    students[1] = new Student('이동준', 35, 10)
+    students[2] = new Student('홍길동', 38, 90)
+    students[3] = new Student('장길산', 45, 80)
+    students[4] = new Student('임꺽정', 55, 70)
+
+    for (let item of students) {
+       item.study()     
+    }
+  </script>
+</body>
+</html>

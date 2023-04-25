@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lodash.js">
+  </script>
+</head>
+<body>
+  <script>
+    // const books = [{
+    //     name: '혼자 공부하는 파이썬',
+    //     price: 18000,
+    //     publisher: '한빛미디어'
+    //   }, {
+    //     name: 'HTML5 웹 프로그래밍 입문',
+    //     price: 26000,
+    //     publisher: '한빛아카데미'
+    //   }, {
+    //     name: '머신러닝 딥러닝 실전 개발 입문',
+    //     prie: 30000,
+    //     publisher: '위키북스'
+    //   }, {
+    //     name: '딥러닝을 위한 수학',
+    //     price: 25000,
+    //     publisher: '위키북스'
+    //   }]
+    //  console.log(JSON.stringify(books))
+    //  console.log('')
+    //  console.log(JSON.stringify(books, null, 2))
+     //2번째 매개변수는 객체에서 어떤 속성만 선택해서 추출하고 싶을 때 사용하나 거의 사용하지 않으며,
+     //일반적으로 null을 넣습니다.
+     //2는 들여쓰기 2칸을 의미
+    //  const books = [{
+    //     name: '혼자 공부하는 파이썬',
+    //     price: 18000,
+    //     publisher: '한빛미디어'
+    //   }, {
+    //     name: 'HTML5 웹 프로그래밍 입문',
+    //     price: 26000,
+    //     publisher: '한빛아카데미'
+    //   }, {
+    //     name: '머신러닝 딥러닝 실전 개발 입문',
+    //     prie: 30000,
+    //     publisher: '위키북스'
+    //   }, {
+    //     name: '딥러닝을 위한 수학',
+    //     price: 25000,
+    //     publisher: '위키북스'
+    //   }]
+    //   const json=JSON.stringify(books)
+    //   console.log(json)
+      
+    //   console.log(JSON.parse(json))
+
+    const books = [{
+        name: '혼자 공부하는 파이썬',
+        price: 18000,
+        publisher: '한빛미디어'
+      }, {
+        name: 'HTML5 웹 프로그래밍 입문',
+        price: 26000,
+        publisher: '한빛아카데미'
+      }, {
+        name: '머신러닝 딥러닝 실전 개발 입문',
+        prie: 30000,
+        publisher: '위키북스'
+      }, {
+        name: '딥러닝을 위한 수학',
+        price: 25000,
+        publisher: '위키북스'
+      }]
+const output = _.orderBy(books, ["name"], ["asc"])
+console.log(JSON.stringify(output))
+
+  </script>
+</body>
+</html>
