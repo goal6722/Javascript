@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="textinput"> 글자 추가 </button>
+   <input type="TEXT" id="inputtext"  NAME="name" size="20">
+
+ <script>
+  //0부터 25의 값 중 하나를 리턴
+function nextRandomInteger(limit) {
+  return Math.round(Math.random()*limit)
+  }
+  //dd
+  //dd
+  //d
+let randomAlphabet = (//알파벳 생성
+  function()
+  {
+    let alphabet = 'ABCDEFGHIJKLMNOPQRXWYZ'
+    return function() {
+      return alphabet[nextRandomInteger(alphabet.length-1)]
+    }
+  }
+)()//이 것의 역할은 이거 자체가
+// 안쪽에 있는 함수를 불렁노다.
+//따라서 
+
+//글자 움직이는 속도를 무작위로 결정하는 함수
+function randomSpeed(maxSpeed) {
+  return (Math.random()*maxSpeed+1) - Math.random()*maxSpeed
+}
+// 글자 움직이 범위위
+let canvasWidth = 700
+let canvasHeight = 400
+
+function MovingText() // 함수가 아니고 틀(class 같은 것)
+{
+  this.x = nextRandomInteger(canvasWidth)
+  this.y = nextRandomInteger(canvasHeight)
+  this.vx = RandomSpeed(10)
+  this.vy = RandomSpeed(10)
+  while(this.vx == 0 && this.vy ==0 )
+  {
+    this.vx = RandomSpeed(10)
+    this.vy = RandomSpeed(10)
+  }
+  this.text = document.createElement('h1')
+  this.text.innerText = randomAlphabet()
+  this.text.style.position = 'fixed'
+  document.body.appendChild(this.text)
+}
+MovingText.prototype.move = function() {
+  if(this.x<0 || this.x>canvasWidth)
+    this.vx *= -1
+  if (this.y<0 || this.y>canvasHeight)
+    this.vy*= -1
+   this.x += this.vx
+   this.y += this.vy
+
+    this.text.style.left = this.x+'px'
+    this.text.style.top = this.y+'px'
+}
+let movingTexts = []
+  for (let i = 0; i < 100; i++) 
+    movingTexts.push(new MovingText())
+    setInterval(function(){
+      for (let i in movingTexts) {
+        movingTexts[i].move(  )
+      }
+    },1000/30)
+    let AddTextButton = document.querySelector('#textinput')
+    let textbox = document.querySelector('#inputtext')
+    
+    AddTextButton.addEventListener('click', ()=>{ 
+      let text = textbox.prototype.innerText.trim() // 입력된 텍스트 값 가져오기
+      {
+        movingTexts.push(text)
+      }
+      inputText.value = ''
+    })
+   
+ </script> 
+
+
+</body>
+</html>
