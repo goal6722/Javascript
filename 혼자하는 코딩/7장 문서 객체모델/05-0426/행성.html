@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="sun">
+    <img src="sun.png" alt="">
+  </h1>
+  <h1 id="earth">
+    <img src="earth.png" alt="">
+  </h1>
+  <h1 id="moon">
+    <img src="moon.png" alt="">
+  </h1>
+
+  <script>
+    let sun = document.querySelector('#sun')
+    let earth = document.querySelector('#earth')
+    let moon = document.querySelector('#moon')
+    // sun.innerHTML='<img src="sun.jpg">'
+    // earth.innerHTML='<img src="earth.jpg">'
+    // moon.innerHTML='<img src="moon.jpg">' // 이런 식으로 적용 할 수도 있다.
+    document.body.background='nightsky.jpg'
+    sun.style.position = 'fixed'
+    earth.style.position = 'fixed'
+    moon.style.position = 'fixed'
+    sun.style.left = 550+'px'
+    sun.style.top = 200+'px'
+    let earthAngle = 0
+    let moonAngle = 0
+    setInterval(function(){ 
+      let earthLeft = 550+150*Math.cos(earthAngle)
+      let earthTop = 200+150*Math.sin(earthAngle)
+      let moonLeft = earthLeft+50*Math.cos(moonAngle)
+      let moonTop = earthTop+50*Math.sin(moonAngle)
+      earth.style.left = earthLeft+'px'
+      earth.style.top = earthTop+'px'
+      moon.style.left = moonLeft+'px'
+      moon.style.top = moonTop+'px'
+      earthAngle+=0.1
+      moonAngle+=0.4
+    }, 1000/30)
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button:first-of-type{
+      display: none;
+    }
+  </style>
+  <script>// 이벤트 먹이기
+    window.onload = function()
+    {
+      let mydinner = document.querySelector('img') 
+      let result = document.querySelector('#result')
+
+      let 된장국 = {
+        name : '된장국',
+        image : 'https://i.ytimg.com/vi/o1ZYqaT7Zhc/maxresdefault.jpg'
+      }
+      let 단식 = {
+        name : '단식',
+        image : 'https://src.hidoc.co.kr/image/lib/2021/12/22/1640158541329_0.jpg'
+      }
+      let dinner = [된장국, 단식]
+      dinner[2] = {
+        name : '쫄병스낵',
+        image : 'https://image.nongshim.com/non/pro/1549601444953.jpg'
+      } 
+      mydinner.width = 0
+      mydinner.height = 0
+      mydinner.src = ''
+      mydinner.style.display = 'block'
+
+      let btn = document.querySelector('button')
+     
+     let previous = -1
+     
+      btn.onclick = function() {
+        mydinner.width = 300
+        mydinner.height = 300
+        mydinner.src = ''
+        result.textContent = ''
+        let idx = Math.floor(Math.random()*dinner.length)
+        while(previous==idx)
+        idx = Math.floor(Math.random()*dinner.length)        
+        previous=idx
+        mydinner.src = dinner[idx].image
+        result.textContent = dinner[idx].name
+              
+      }
+      let timerid = setInterval(() => {
+          btn.click()
+        }, 100)
+
+        document.querySelector('#stop').onclick = () => {
+          clearInterval(timerid)
+        }
+        document.querySelector('#start').onclick = () => {
+          
+          clearInterval(timerid)
+          timerid = setInterval(() => {
+            btn.click()
+          }, 100)
+        }
+    }
+     
+    
+  </script>
+</head>
+<body>
+  <h1>오늘의 저녁은?</h1>
+  <button></button>
+  <button id="stop">멈춰</button>
+  <button id="start">시작</button>
+  <img src="" alt="">
+  <h1 id="result"></h1>
+</body>
+</html>
