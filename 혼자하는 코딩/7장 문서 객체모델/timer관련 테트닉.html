@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+     document.addEventListener('DOMContentLoaded', () => {
+      const header = document.createElement('h2')  
+      header.textContent='안녕하세요'
+      
+      const first = document.querySelector('#first')
+      const second = document.querySelector('#second')
+      const array = [first, second]
+     let 카운터 = 0
+      const fun = function() {
+        array[카운터 % 2].appendChild(header)
+        카운터++
+
+      }
+      setInterval(fun,1000)
+      // first.appendChild(header)
+
+      // const toFirst = () => {
+      //   first.appendChild(header)
+      //   setTimeout(toSecond, 1000)
+      // }
+      // const toSecond = () => {
+      //   second.appendChild(header)
+      //   setTimeout(toFirst, 1000)
+      // }
+      // toFirst()
+     })
+  </script>
+</head>
+<body>
+  <div id="first">
+    <h1>첫 번째 div 태그 내부</h1>
+  </div>
+  <hr>
+  <div id="second">
+    <h1> 두 번째 div 태그 내부</h1>
+  </div>
+  
+</body>
+</html>

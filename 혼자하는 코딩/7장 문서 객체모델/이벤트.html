@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.createElement('h1')
+      document.body.appendChild(header)
+      
+      let count = 0
+      header.style.userSelect='none' // 거지 게임 이런 효과 사용해서 만들면 될듯
+      header.textContent=`클릭 횟수는 ${count}회`
+      header.addEventListener('click', () => {
+        header.textContent=`클릭 횟수는 ${count}회`
+        count ++
+      })
+      
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
