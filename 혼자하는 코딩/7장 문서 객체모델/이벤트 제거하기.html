@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+   
+  </script>
+</head>
+<body>
+  <script>
+    let count = 0
+   const listener = () => {
+    header.textContent= `클릭 횟수 ${count}회`
+    count ++
+   }
+    const header = document.createElement('h1')
+    header.textContent ='클릭횟수 0회'
+    const p = document.createElement('p')
+    p.textContent = '이벤트가 해제 되었습니다'
+    const connect = document.createElement('button')
+    connect.textContent='연결'
+    connect.addEventListener('click',()=>{
+      header.addEventListener('click', listener)
+      p.textContent = '이벤트가 연결 상태 : 연결'
+
+    })
+    const remove = document.createElement('button')
+    remove.textContent='해제'
+    remove.addEventListener('click',()=>{
+      header.removeEventListener('click', listener)
+      p.textContent = '이벤트가 연결 상태 : 해제'
+
+    })
+
+    document.body.appendChild(header)
+    document.body.appendChild(p)
+    document.body.appendChild(connect)
+    document.body.appendChild(remove)
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script> 
+  document.addEventListener('DOMContentLoaded', () => {
+    const divA = document.querySelector('#first') // diva = <div id="first">
+    const divB = document.querySelector('#second') // divb= <div id="second">
+    const h1 = document.createElement('h1') // h1 생성
+    h1.textContent = '이동하는 h1 태그' //<h1> 이동하는 태그 </h1>
+
+    const toFirst = () => {
+      divA.appendChild(h1) //divA에 h1을 추가한다
+      setInterval(toSecond,10000) // 1초 뒤에 tosecond 함수를 실행합니다.
+    }
+    // settiemout(원하는거 생성,1000) 1초후에 실행 한다는 뜻
+    const toSecond = () => {
+      divB.appendChild(h1) // divB에 h1을 추가한다.
+      setInterval(toFirst, 10000) // 10초 뒤에 toFirst 함수를 실행합니다.
+    }
+    toFirst()
+  })
+  </script>
+</head>
+<body>
+  <div id="first">
+    <h1>첫 번째 div 태그 내부</h1>
+  </div>
+  <hr>
+  <div id="second">
+    <h1> 두 번째 div 태그 내부</h1>
+  </div>
+</body>
+</html>
