@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      user-select: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>
+    아녕하세요
+  </h1>
+  <button>이벤트시작</button>
+  <button>이벤트제거</button>
+  <script>
+    let h1 = document.querySelector('h1')
+    let count = 0 // 클릭횟수
+    const buttons = document.querySelectorAll('button')
+    const colorful = () => {
+      count ++
+      h1.style.color = `rgb(${(count*10)%255},0,0)`
+
+    }
+    buttons[0].addEventListener('click', ()=>{
+      h1.addEventListener('click', colorful)
+    })
+    buttons[1].addEventListener('click', function() {
+      h1.removeEventListener('click', colorful)
+    })
+  </script>
+</body>
+</html>
