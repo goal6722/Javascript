@@ -5,6 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    button{
+      width:30px;
+      height: 30px;
+      margin-left: 20px;
+      font-size: 20px;
+    }
+     #answer, #submit, #cancel{
+      width: 100px;
+      height: 50px;
+      font-size: 20px;
+     }
+     #input{
+      position: fixed;
+      top : 50px;
+      left : 150px; 
+     }
+     #time{
+      position: fixed;
+      top : 50px;
+      left : 500px; 
+     }
+  </style>
 </head>
 <body>
   <div style="height: 60px;">
@@ -29,9 +52,34 @@
     </div>
   </div>
   <button id="submit" style="margin-left: 20px;">제출</button>
-  <button id="cancle" style="margin-left: 20px;">취소</button>
-  <div style>
-
+  <button id="cancel" style="margin-left: 20px;">취소</button>
+  <div style="height: 60px;">
+    <h3 id="input" style="margin-left:170px"></h3>
+    <h5 id="time"></h5>
   </div>
+  <button id="answer">
+    정답은?
+  </button>
+  <script>
+    // 정답을 먼저 생산 해보자
+    let output = ''
+    let array = [] // 빈 배열
+    let input = 0 
+    do{
+      input=Math.floor(Math.random()*10)
+      //indexOf는 특정 문자 위치 찾기
+      //array 안에 input 값이 있으면 그 것이 위치한 인덱스를 반환
+      //그 값이 없으면 -1 
+      const idx = array.indexOf(input)// ex input에 1이 오면 1은 0의 자리
+      if (idx==-1) { //idx 가 -1d이 올 수가 있나?
+        array.push(input) // 배열
+        outout+=input // 문자열
+      }
+    }while(array.length<3)
+    
+    //각 dom 변수 지정 생성
+    
+
+  </script>
 </body>
 </html>

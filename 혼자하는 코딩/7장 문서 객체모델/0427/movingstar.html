@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () =>{
+      const star = document.querySelector('h1') // star = h1
+      star.style.position = 'fixed' // star 포지션 자유자재
+      let [x,y] = [0,0] // ??? 
+      const block = 20
+      const print = () =>{
+        star.style.left = `${x*block}px`
+        star.style.top = `${y*block}px`
+
+        const starWidth = star.offsetWidth;
+  const starHeight = star.offsetHeight;
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  
+  // left와 top 위치가 음수가 되지 않도록 조정
+  x = Math.max(0, x);
+  y = Math.max(0, y);
+  
+  // right와 bottom 위치가 창의 너비와 높이보다 크지 않도록 조정
+  x = Math.min(windowWidth / starWidth - 1, x);
+  y = Math.min(windowHeight / starHeight - 1, y);
+  
+  star.style.left = `${x*starWidth}px`
+  star.style.top = `${y*starHeight}px`
+      }
+      
+      print()
+      const[left,up,right,down] = [37,38,39,40]
+      document.body.addEventListener('keydown',(event)=>{
+        switch(event.keyCode){
+          case left:
+            x-=1
+            break
+          case right:
+            x+=1
+            break
+          case up:
+            y-=1
+            break
+          case down:
+            y+=1
+            break
+           
+        }
+        print() 
+      })
+ 
+    }
+    
+  </script>
+</head>
+<body>
+  <h1>*</h1>
+</body>
+</html>

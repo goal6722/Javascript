@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //...은 매개변수의 개수를 모를때 쓰는 덧
+    function mysum(...items){
+      let sum = 0;
+      for (const iterator of items) 
+        sum+=iterator
+        console.log('총합='+sum)
+      
+    }
+
+    function mysum2(){
+      let sum=0;
+      for (const iterator of arguments) {
+        sum+=iterator
+      }
+      console.log('총합='+sum)
+    }
+    mysum(1,2,3,4,5)
+    mysum2(1,2,3,4,5)
+    //a 자리에 아무것도 없으면1, 갑 넣으면 그 값이 a 가 됨
+    function mypower(a=1)
+    {
+      if(a==1)
+      console.log(1)
+      else 
+      console.log(a*a)
+    }
+    mypower()
+    mypower(10)
+
+    function justprint(...items)
+    {
+      console.log(items)
+    }
+    const arr = [1,2,3,4,5]
+    justprint(arr) // arr 한덩어리가 출력
+    justprint(...arr) // arr에 있는 값들이 하나 씩 출력 됨
+
+  </script>
+  
+</body>
+</html>

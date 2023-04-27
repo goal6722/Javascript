@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+  <h2></h2>
+  <h3></h3>
+  
+  <script>
+    let dice = [1,2,3,4,5,6]
+    let count = 0
+    let diceCount1 = 0
+    let diceCount2 = 0
+    let diceCount3 = 0
+    let diceCount4 = 0
+    let diceCount5 = 0
+    let diceCount6 = 0
+    
+    let tried = prompt('주사위를 몇번 굴릴까요?') 
+
+     for (let i = 1; i <= tried; i++) {
+      let dice2 = Math.floor(Math.random()*6)+1
+      console.log(`이번 주사위 수는 ${dice2} 입니다`)
+      count ++
+      switch (dice2) {
+        case 1:
+        diceCount1 ++
+          console.log(`1이 나온 확률 : ${(diceCount1/count)*100}% `)
+          break
+          case 2:
+          diceCount2 ++
+          console.log(`2이 나온 확률 : ${(diceCount2/count)*100}% `)
+          break
+          case 3:
+          diceCount3 ++
+          console.log(`3이 나온 확률 : ${(diceCount3/count)*100}% `)
+          break
+          case 4:
+          diceCount4++
+          console.log(`4가 나온 확률 : ${(diceCount4/count)*100}% `)
+          break
+          case 5:
+         diceCount5++
+          console.log(`5가 나온 확률 : ${(diceCount5/count)*100}%`)
+          break
+          case 6:   
+          diceCount6++      
+          console.log(`6이 나온 확률 : ${(diceCount6/count)*100}% `)        
+          break;
+      
+        default:
+          break;
+      }
+      console.log(`총 시도 횟수는 ${count} 입니다`) 
+      }
+      
+  
+      
+
+  </script>
+</body>
+</html>
