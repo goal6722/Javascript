@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+  <style> h1 {user-select: none;}</style>
+  <script>
+    //제이 쿼리로 이벤트 추가해보기
+    //window.onload를 제이쿼리에선 어떻게?
+    //$(function(){})
+    $(function(){
+      $('#one').on('click', function(){alert('Hello')})
+      $('#two').click(function(){alert('안뇽')})
+    })
+  </script>
+</head>
+<body>
+ <h1 id="one"> Lorem, ipsum dolor.</h1>
+ <h1 id="two"> Lorem, ipsum.</h1>
+ <script>
+  //바닐라와 제이쿼리
+  let one = document.getElementById('one')
+  let two = document.querySelector('#two')
+  two.style.background='cyan'
+  // jquery엣 $는 document 를 의미
+  // 체이닝 메소드
+  one = $('#one')
+  two =$('#two')
+  one.css('background-color', 'yellow')
+  two.css('color', 'blue').css('border','1px solid black')
+
+
+
+ </script>
+</body>
+</html>

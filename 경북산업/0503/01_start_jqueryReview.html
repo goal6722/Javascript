@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script></head>
+<script>
+ </script>
+  <body>
+
+  <h1 id="lab">클릭횟수 0회</h1>
+  <h2 id="two">Lorem ipsum dolor sit.</h2>
+<script>
+    one=$('#one')
+    two=$('#two')
+    one.css('color','red')
+    two.css('color','blue')
+var push=$('#lab')
+var count = 0
+$(function(){
+ 
+  push.click(function(){push.text(`클릭횟수 ${++count}회`)})
+})
+  
+</script>
+</body>
+</html>
