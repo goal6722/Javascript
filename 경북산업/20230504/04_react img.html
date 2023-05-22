@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const imgURL='https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMTJfMTcw%2FMDAxNjY4MjI2MjY5NDg4.QMJXf7G1UXYMtrFj7RfMEopY6IDTodC2XVU6TomDnsUg.W_jH6XQVXCwcrK2_sGYqaDv58Oz1VsdqotoEQRi-lF4g.JPEG.kpk0925%2F1668226266946.jpg&type=a340'
+    const name = '이수성'
+    const component = 
+    <div>
+      <h1>{name}</h1>
+      <img src="{imgURL}"/>
+      </div>
+      const container = document.getElementById('root')
+    
+    ReacctDOM.render(component, container)
+  </script>
+  
+</body>
+</html>

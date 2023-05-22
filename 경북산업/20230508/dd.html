@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    let name = prompt('이름이 뭔가요?')
+    let imageurl
+    let component
+    if(name=='저그')
+    imageurl='https://static.wikia.nocookie.net/supernaturalpowers/images/6/64/%EC%A0%80%EA%B7%B8_%EB%8C%80%EA%B5%B0%EC%A3%BC.jpg/revision/latest?cb=20190328001243&path-prefix=ko'
+    else if(name=='프로토스')
+    imageurl='https://i.namu.wiki/i/bdYL-7v7kY6KaUHXKoNfsc_gLYFRZ16mfOavqvzGaRLm8N1LxcVw0Z9NqXT3-41uy7RIwqJ6DZZt3ZjNU9eTCw.webp'
+    else if(name=='테란')
+    imageurl='https://i.namu.wiki/i/XNoUhPIZ8EuY4Kn1YpCssmgZiNv7wK9JGeIqRzlFO6qRfk3G1i7fGYeer9zc36DfwtA8sjCkeli9AkH0sbkRHw.webp'
+    else
+    imageurl='https://i.namu.wiki/i/ICQlymnWVO8DonG6SF8QmFeGGS9sRZhK5Yzd8_--i-SpdMLNbKmgkhl77mFJTbd3ML376xA1phLvB9I0i7NHzQ.webp'
+    component = <div>
+      <h1> 리액트 시작 : {name}</h1>
+      <img src=      {imageurl}/>
+      </div>
+      const container = document.getElementById('root')
+      ReactDOM.render(component,container)
+
+
+  </script>
+  
+</body>
+</html>
